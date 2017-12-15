@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Plaza Calendar
+==============
 
-Things you may want to cover:
+Ruby Version 2.2.2
 
-* Ruby version
+Purpose
+-------
+Builds a calendar for watering plazas in a city, originally
+designed for NYC.
 
-* System dependencies
+Acknowledgements
+----------------
 
-* Configuration
+Basic Structure of the application is based on the Ruby on Rails
+tutorial by Michael Hartl
 
-* Database creation
+[www.railstutorial.com]
 
-* Database initialization
+Licence
+--------
 
-* How to run the test suite
+This work is liscenced under a Creative Commons Attribution-Share
+Alike 4.0 international licence
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...

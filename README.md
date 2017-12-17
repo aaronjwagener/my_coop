@@ -10,6 +10,12 @@ Purpose
 Builds a calendar for watering plazas in a city, originally
 designed for NYC.
 
+Comments for Future Changes
+---------------------------
+
+ * The base title of the application can be found in app/helpers/
+   application\_helper.rb
+
 Acknowledgements
 ----------------
 

@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+aaron:
+  name: "Aaron Wagener"
+  email: "aaron@example.com"
+
+mal:
+  name: "Malcolm Reynolds"
+  email: "mal@serenity.org"

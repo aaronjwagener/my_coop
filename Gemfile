@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails',              '5.1.2'     # The rails
+gem 'bcrypt',             '3.1.11'    # Hash function
 gem 'bootstrap-sass',     '3.3.7'     # CSS framework
 gem 'puma',               '3.9.1'     # The dev server
 gem 'sass-rails',         '5.0.6'     # Supports SCSS

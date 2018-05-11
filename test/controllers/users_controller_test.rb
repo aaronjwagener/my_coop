@@ -29,6 +29,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get edit" do
+    log_in_as(@user)
     get edit_user_url(@user)
     assert_response :success
   end

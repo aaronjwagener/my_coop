@@ -8,9 +8,9 @@ aaron:
 mal:
   name: Malcolm Reynolds
   email: mal@serenity.org
-  password_digest: <%= User.digest('aim2misbehave') %>
+  password_digest: <%= User.digest('password') %>
 
 zoey:
   name: Zoey Washburne
   email: zoey@serenity.org
-  password_digest: <%= User.digest('vesselside') %>
+  password_digest: <%= User.digest('password') %>

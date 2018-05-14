@@ -1,15 +1,18 @@
 source 'https://rubygems.org'
 
-gem 'rails',              '5.1.2'     # The rails
-gem 'bcrypt',             '3.1.11'    # Hash function
-gem 'bootstrap-sass',     '3.3.7'     # CSS framework
-gem 'puma',               '3.9.1'     # The dev server
-gem 'sass-rails',         '5.0.6'     # Supports SCSS
-gem 'uglifier',           '3.2.0'     # Javascript stuff
-gem 'coffee-rails',       '4.2.2'     # same
-gem 'jquery-rails',       '4.3.1'     # same
-gem 'turbolinks',         '5.0.1'     # Faster loading pages
-gem 'jbuilder',           '2.7.0'     # Easily builds JSON objects
+gem 'rails',                   '5.1.2'     # The rails
+gem 'bcrypt',                  '3.1.11'    # Hash function
+gem 'faker',                   '1.7.3'     # Generate sample content
+gem 'will_paginate',           '3.1.6'     # Paginate long lists
+gem 'bootstrap-will_paginate', '1.0.0'     # Bootstrap for will_paginate
+gem 'bootstrap-sass',          '3.3.7'     # CSS framework
+gem 'puma',                    '3.9.1'     # The dev server
+gem 'sass-rails',              '5.0.6'     # Supports SCSS
+gem 'uglifier',                '3.2.0'     # Javascript stuff
+gem 'coffee-rails',            '4.2.2'     # same
+gem 'jquery-rails',            '4.3.1'     # same
+gem 'turbolinks',              '5.0.1'     # Faster loading pages
+gem 'jbuilder',                '2.7.0'     # Easily builds JSON objects
 
 
 group :development, :test do

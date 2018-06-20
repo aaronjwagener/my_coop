@@ -1,14 +1,21 @@
 # README
 
-Base App
+My.Coop
 ==============
 
 Ruby Version 2.2.2
+Rails Version 5.1.2
 
 Purpose
 -------
-A basic app with fully functional Users model. Designed to be 
-a starting point for any other web app with users.
+A central dashboard for members to engage with all of their cooperatives!
+
+This platform holds the potential to streamline
+ * Governance
+ * Engagement
+ * Payments
+
+And much more!
 
 Comments for Future Changes
 ---------------------------
@@ -19,10 +26,13 @@ Comments for Future Changes
 Acknowledgements
 ----------------
 
-Basic Structure of the application is based on the Ruby on Rails
+Basic structure of the application is based on the Ruby on Rails
 tutorial by Michael Hartl
 
 [www.railstutorial.com]
+
+The idea for this application comes from [Matt Cropp](www.veoc.org/staff) at the Vermont
+Employee Ownership Center.
 
 Licence
 --------

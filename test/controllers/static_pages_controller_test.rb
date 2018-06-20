@@ -3,7 +3,7 @@ require 'test_helper'
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
 
   def setup
-    @base_title = "Base App"
+    @base_title = "My Coop"
   end
 
   test "should get home" do

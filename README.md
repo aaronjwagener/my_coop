@@ -34,6 +34,11 @@ tutorial by Michael Hartl
 The idea for this application comes from [Matt Cropp](www.veoc.org/staff) at the Vermont
 Employee Ownership Center.
 
+### Helpful Resources ###
+Thanks to these helpful articles!
+
+[http://brandonclapp.com/many-to-many-model-relationships-in-rails/]
+
 Licence
 --------
 

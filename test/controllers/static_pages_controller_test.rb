@@ -3,7 +3,7 @@ require 'test_helper'
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
 
   def setup
-    @base_title = "Plaza Calendar"
+    @base_title = "Base App"
   end
 
   test "should get home" do

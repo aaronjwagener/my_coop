@@ -1,14 +1,14 @@
 # README
 
-Plaza Calendar
+Base App
 ==============
 
 Ruby Version 2.2.2
 
 Purpose
 -------
-Builds a calendar for watering plazas in a city, originally
-designed for NYC.
+A basic app with fully functional Users model. Designed to be 
+a starting point for any other web app with users.
 
 Comments for Future Changes
 ---------------------------

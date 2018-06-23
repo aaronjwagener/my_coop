@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
+  # Fetches user based on ID
   before_action :set_user,       only: [:show, :edit, :update, :destroy]
+  # Only allows if user logged in
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
+  # Only allows if user is correct
   before_action :correct_user,   only: [:edit, :update]
+  # Only allows if user is admin
   before_action :admin_user,     only: :destroy
 
   def index

@@ -4,6 +4,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
 
   def setup
     @user = users(:aaron)
+    @other_user = users(:mal)
   end
 
   test "unsuccessful edit" do
@@ -33,5 +34,13 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     @user.reload
     assert_equal name, @user.name
     assert_equal email, @user.email
+  end
+
+  test "edit should only show with logged in user" do
+    log_in_as(@user)
+    get user_path(@user)
+    assert_select 'a', text: "Edit"
+    get user_path(@other_user)
+    assert_select 'a', text: "Edit", count: 0
   end
 end

@@ -1,8 +1,13 @@
 require 'test_helper'
 
 class CoopsNewTest < ActionDispatch::IntegrationTest
+  
+  def setup
+    @user = users(:aaron)
+  end
 
   test "create should not work with invalid info" do
+    log_in_as(@user)
     get coops_new_path
     assert_no_difference 'Coop.count' do
       post coops_path, params: { coop: { name: "",
@@ -14,6 +19,7 @@ class CoopsNewTest < ActionDispatch::IntegrationTest
   end
 
   test "create should work with valid info" do
+    log_in_as(@user)
     get coops_new_path
     assert_difference 'Coop.count' do
       post coops_path, params: { coop: { name: "New Day Cooperative",

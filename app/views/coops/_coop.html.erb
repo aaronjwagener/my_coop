@@ -1,3 +1,7 @@
 <li>
   <%= link_to coop.name, coop %>
+  <% if current_user.admin? %>
+    | <%= link_to "delete", coop, method: :delete,
+                                  data: { confirm: "Are you sure?" } %>
+  <% end %>
 </li>

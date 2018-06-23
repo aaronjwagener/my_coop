@@ -1,0 +1,11 @@
+<% provide(:title, 'All coops') %>
+
+<h1>All coops</h1>
+
+<%= will_paginate %>
+
+<ul class="coops">
+  <%= render @coops %>
+</ul>
+
+<%= will_paginate %>

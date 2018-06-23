@@ -1,4 +1,13 @@
 <% provide(:title, @coop.name) %>
-<h1><%= @coop.name %></h1>
-
-<p><%= @coop.description %></p>
+<div class="row">                                                               
+  <aside class="col-md-4"> 
+    <p id="notice"><%= notice %></p>
+    <section class="coop_info">
+      <h1><%= @coop.name %></h1>
+      <p><%= @coop.description %></p>
+    </section>
+    <section>
+      <%= link_to 'Back', coops_path %>
+    </section>
+  </aside>
+</div>

@@ -7,3 +7,10 @@ citymarket:
 adamant:
   name: The Adamant Cooperative
   description: Home of the blackflies!
+
+
+<% 30.times do |n| %>                                                           
+coop_<%= n %>:                                                                  
+  name:   <%= "Coop #{n}" %>                                                    
+  description:  <%= "Description for coop #{n}." %>                                        
+<% end %> 

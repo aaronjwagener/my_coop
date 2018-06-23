@@ -17,3 +17,10 @@ User.create!(name:  "Example User",
                password:              password,
                password_confirmation: password)
 end
+
+99.times do |n|
+  name = Faker::Company.name
+  description = Faker::Lorem.sentence(5)
+  Coop.create!(name: name,
+               description: description)
+end

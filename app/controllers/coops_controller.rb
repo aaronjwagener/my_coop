@@ -1,4 +1,9 @@
 class CoopsController < ApplicationController
+  
+  def index
+    @coops = Coop.paginate(page: params[:page])                
+  end
+  
   def show
     @coop = Coop.find(params[:id])
   end

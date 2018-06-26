@@ -1,7 +1,22 @@
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <h1><%= current_user.name %></h1>
+        <span><%= link_to "view my profile", current_user %></span>
+      </section>
+    </aside> 
+    <div class="col-md-8">
+      <h3>My Coops</h3>
+      <%= render 'shared/coop_panels', coops: @joined_coops %>
+    </div>
+  </div>
+<% else %>
 <div class="center jumbotron">
   <h1>My Coop</h1>
   <h2> Access all your coops here!</h2>
 
   <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
 </div>
+<% end %>
 

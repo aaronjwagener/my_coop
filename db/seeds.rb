@@ -18,9 +18,26 @@ User.create!(name:  "Example User",
                password_confirmation: password)
 end
 
-99.times do |n|
+# Coops
+
+Coop.create!( name: "Example Coop",
+              description: "A democratic place!")
+
+50.times do |n|
   name = Faker::Company.name
   description = Faker::Lorem.sentence(5)
   Coop.create!(name: name,
                description: description)
 end
+
+# Memberships
+users = User.all
+user = users.first
+members = users[2..40]
+coops = Coop.all
+coop = coops.first
+joined_coops = coops[1..7]
+
+members.each        { |new_member| coop.add_member(new_member) }
+joined_coops.each   { |new_coop|   user.join_coop(new_coop) }
+

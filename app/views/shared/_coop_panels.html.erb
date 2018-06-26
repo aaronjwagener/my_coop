@@ -1,0 +1,8 @@
+<div class="panel-group">
+  <% coops.each do |coop| %>
+  <div class="panel panel-default">
+    <div class="panel-heading"><%= link_to coop.name, coop %></div>
+    <div class="panel-body"><%= coop.description %></div>
+  </div>
+  <% end %>
+</div>

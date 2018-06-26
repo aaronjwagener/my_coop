@@ -9,5 +9,14 @@ Rails.application.routes.draw do
   get    '/login',     to: 'sessions#new'
   post   '/login',     to: 'sessions#create'
   delete '/logout',    to: 'sessions#destroy'
-  resources :users, :coops
+  resources :users do
+   member do
+     get :joined_coops
+   end
+  end
+  resources :coops do
+    member do
+      get :members
+    end
+  end
 end

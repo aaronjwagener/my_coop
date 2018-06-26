@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  has_many :memberships,  foreign_key: :member_id,
+                          dependent:   :destroy
+  has_many :joined_coops, through:     :memberships 
   attr_accessor :remember_token
   before_save { email.downcase! } 
   validates :name,  presence: true, length: { maximum: 50 }
@@ -37,5 +40,22 @@ class User < ApplicationRecord
   # Forgets a user
   def forget
     update_attribute(:remember_digest, nil)
+  end
+
+  ## Membership methods ##
+  
+  # Joins a coop
+  def join_coop(coop)
+    joined_coops << coop
+  end
+
+  # Ends membership with a coop
+  def leave_coop(coop)
+    joined_coops.delete(coop)
+  end
+
+  # Returns true if user has joined the coop
+  def joined?(coop)
+    joined_coops.include?(coop)
   end
 end

@@ -1,6 +1,7 @@
 class CoopsController < ApplicationController
   # Sets coop based on id
-  before_action :set_coop,         only: [:show, :edit, :update, :destroy]
+  before_action :set_coop,         only: [:show, :edit, :update, :destroy,
+                                          :members]
   # Permission filters
   before_action :logged_in_user   
   before_action :admin_user,       only: [:new, :create, :destroy]
@@ -44,6 +45,11 @@ class CoopsController < ApplicationController
     @coop.destroy
     flash[:success] = "Coop deleted"
     redirect_to coops_url
+  end
+
+  def members 
+    @members = @coop.members.paginate(page: params[:page])
+    render 'members'
   end
 
   private

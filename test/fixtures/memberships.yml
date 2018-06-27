@@ -1,1 +1,15 @@
-# Empty
+one:
+  member: kaylee
+  joined_coop: fullbarrel 
+
+two:
+  member: kaylee 
+  joined_coop: cabot 
+
+three:
+  member: jayne 
+  joined_coop: fullbarrel 
+
+four:
+  member: river 
+  joined_coop: fullbarrel 

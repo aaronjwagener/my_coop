@@ -84,4 +84,9 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_url
   end
 
+  test "should redirect to joined_coops when not logged in" do
+    get joined_coops_user_path(@user)
+    assert_redirected_to login_url
+  end
+
 end

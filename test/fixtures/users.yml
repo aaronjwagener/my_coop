@@ -16,6 +16,26 @@ zoey:
   email: zoey@serenity.org
   password_digest: <%= User.digest('password') %>
 
+kaylee:
+  name: Kaylee Frye
+  email: kaylee@serenity.org
+  password_digest: <%= User.digest('password') %>     
+
+jayne:
+  name: Jayne Cobb
+  email: jayne@serenity.org
+  password_digest: <%= User.digest('password') %>
+
+simon:
+  name: Simon Tam
+  email: simon@serenity.org
+  password_digest: <%= User.digest('password') %>
+
+river:
+  name: River Tam
+  email: river@serenity.org
+  password_digest: <%= User.digest('password') %>
+
 <% 30.times do |n| %>
 user_<%= n %>:
   name:   <%= "User #{n}" %>

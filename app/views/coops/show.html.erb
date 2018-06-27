@@ -7,7 +7,10 @@
       <p><%= @coop.description %></p>
     </section>
     <section>
-      <%= link_to 'Back', coops_path %>
+      <%= link_to 'All Coops', coops_path %>
+    </section>
+    <section>
+      <%= link_to 'Members', members_coop_path(@coop) %>
     </section>
   </aside>
 </div>

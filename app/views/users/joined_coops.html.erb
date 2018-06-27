@@ -1,0 +1,18 @@
+<% provide(:title, "My Coops") %>
+<div class="row">                                                               
+  <aside class="col-md-4">                                                      
+    <section class="coop_info">                                                 
+      <h1><%= link_to @user.name, @user %></h1>
+    </section>                                                                  
+  </aside>                                                                      
+  <div class="col-md-8">                                                        
+    <h3>My coops</h3>
+    <% if @joined_coops.any? %>
+      <ul class="joined_coops">
+        <%= render partial: "joined_coop", collection: @joined_coops, 
+                                           as: :joined_coop %>
+      </ul>
+      <%= will_paginate @joined_coops %>
+    <% end %>                                                                   
+  </div>                                                                        
+</div>

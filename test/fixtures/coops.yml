@@ -8,6 +8,14 @@ adamant:
   name: The Adamant Cooperative
   description: Home of the blackflies!
 
+fullbarrel:
+  name: Full Barrel Cooperative
+  description: Good beer here.
+
+cabot:
+  name: Cabot Creamery
+  description: The BEST Cheese!
+
 
 <% 30.times do |n| %>                                                           
 coop_<%= n %>:                                                                  

@@ -41,3 +41,9 @@ joined_coops = coops[1..7]
 members.each        { |new_member| coop.add_member(new_member) }
 joined_coops.each   { |new_coop|   user.join_coop(new_coop) }
 
+# Managements
+users = User.all
+managers = users[1..2]
+coop = Coop.first
+
+managers.each { |new_manager| coop.add_manager(new_manager) }

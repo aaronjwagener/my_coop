@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'coops/new'
-
   root 'static_pages#home'
   get    '/help',      to: 'static_pages#help'
   get    '/about',     to: 'static_pages#about'
@@ -11,12 +9,14 @@ Rails.application.routes.draw do
   delete '/logout',    to: 'sessions#destroy'
   resources :users do
    member do
-     get :joined_coops
+     get :joined_coops, :managed_coops
    end
   end
   resources :coops do
     member do
-      get :members
+      get :members, :managers
     end
   end
+  resources :memberships,          only: [:create, :destroy]
+  resources :managements,          only: [:create, :destroy]
 end

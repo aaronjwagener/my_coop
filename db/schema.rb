@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180626025835) do
+ActiveRecord::Schema.define(version: 20180627180428) do
 
   create_table "coops", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "managements", force: :cascade do |t|
+    t.integer "manager_id"
+    t.integer "managed_coop_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["managed_coop_id"], name: "index_managements_on_managed_coop_id"
+    t.index ["manager_id", "managed_coop_id"], name: "index_managements_on_manager_id_and_managed_coop_id", unique: true
+    t.index ["manager_id"], name: "index_managements_on_manager_id"
   end
 
   create_table "memberships", force: :cascade do |t|

@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   # Fetches user based on ID
   before_action :set_user,       only: [:show, :edit, :update, :destroy,
-                                        :joined_coops]
+                                        :joined_coops, :managed_coops]
   # Only allows if user logged in
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy,
-                                        :joined_coops]
+                                        :joined_coops, :managed_coops]
   # Only allows if user is correct
   before_action :correct_user,   only: [:edit, :update]
   # Only allows if user is admin
@@ -51,8 +51,15 @@ class UsersController < ApplicationController
   end
 
   def joined_coops
-    @joined_coops = @user.joined_coops.paginate(page: params[:page])
-    render 'joined_coops'
+    @title = "Joined Coops"
+    @items = @user.joined_coops.paginate(page: params[:page])
+    render 'show_list'
+  end
+
+  def managed_coops
+    @title = "Managed Coops"
+    @items = @user.managed_coops.paginate(page: params[:page])
+    render 'show_list'
   end
 
   ########## ENTERING PRIVATE FUNCTIONS ##########

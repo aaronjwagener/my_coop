@@ -1,7 +1,11 @@
 class Coop < ApplicationRecord
-  has_many :memberships, foreign_key: :joined_coop_id,
-                         dependent:   :destroy
-  has_many :members, through: :memberships
+  
+  ## Associations ##
+  has_many :memberships, foreign_key: :joined_coop_id,  dependent: :destroy
+  has_many :members,  through: :memberships
+
+  has_many :managements, foreign_key: :managed_coop_id, dependent: :destroy
+  has_many :managers, through: :managements
 
   validates :name,        presence: true, length: { maximum: 50 }
   validates :description, presence: true
@@ -21,6 +25,22 @@ class Coop < ApplicationRecord
   # Returns true if the user is a member
   def member?(user)
     members.include?(user)
+  end
+
+  ## Management Methods ##
+  
+  def add_manager(user)
+    managers << user
+  end
+  
+  # Removes a user from management
+  def remove_manager(user)
+    managers.delete(user)
+  end
+  
+  # Returns true if the user is a manager
+  def manager?(user)
+    managers.include?(user)
   end
 
 end

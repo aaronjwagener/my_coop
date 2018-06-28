@@ -1,0 +1,14 @@
+<%= provide(:title, @title) %>
+
+<div class="row">
+  <% unless controller.action_name == 'index' %>
+    <%= render 'info_sidebar' %>
+  <% end %>
+  <div class="col-md-8">
+    <h3><%= @title %></h3>
+    <% # this helper function is in application_helper %>
+    <%= render_list @items %> 
+    <%= will_paginate @items %>
+  </div>
+</div>
+

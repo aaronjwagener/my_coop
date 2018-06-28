@@ -1,9 +1,13 @@
 class User < ApplicationRecord
-  has_many :memberships,  foreign_key: :member_id,
-                          dependent:   :destroy
-  has_many :joined_coops, through:     :memberships 
-  attr_accessor :remember_token
-  before_save { email.downcase! } 
+
+  ## Associations ##
+  has_many :memberships,   foreign_key: :member_id,  dependent: :destroy
+  has_many :joined_coops,  through:     :memberships 
+  
+  has_many :managements,   foreign_key: :manager_id, dependent: :destroy
+  has_many :managed_coops, through:     :managements
+
+  ## Validations ##
   validates :name,  presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
@@ -11,7 +15,12 @@ class User < ApplicationRecord
                                     uniqueness: {case_sensitive: false }
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
+  ## Actions ##
+  before_save { email.downcase! } 
+  attr_accessor :remember_token
   has_secure_password
+  
+  ## Functions ##
   
   # Returns the hash digest of the given string
   def User.digest(string)
@@ -58,4 +67,14 @@ class User < ApplicationRecord
   def joined?(coop)
     joined_coops.include?(coop)
   end
+
+  ## Management methods ##
+  
+  # Methods for adding/removing managers are in the Coop model
+
+  # Returns true if coop is managed by user
+  def managed?(coop)
+    managed_coops.include?(coop)
+  end
+
 end

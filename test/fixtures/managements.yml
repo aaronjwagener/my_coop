@@ -1,0 +1,14 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  manager: aaron 
+  managed_coop: fullbarrel
+
+two: 
+  manager: aaron
+  managed_coop: cabot
+
+three: 
+  manager: kaylee
+  managed_coop: fullbarrel
+

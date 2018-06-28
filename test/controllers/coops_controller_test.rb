@@ -93,4 +93,8 @@ class CoopsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to login_url
   end
 
+  test "should redirect managers page when not logged in" do
+    get managers_coop_path(@coop)
+    assert_redirected_to login_url
+  end
 end
